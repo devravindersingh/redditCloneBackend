@@ -1,27 +1,19 @@
 package com.ravinder.rcbackend.security;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.Key;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
-
-import javax.annotation.PostConstruct;
-
+import com.ravinder.rcbackend.exception.SpringRedditException;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
-import com.ravinder.rcbackend.exception.SpringRedditException;
+import javax.annotation.PostConstruct;
+import java.io.IOException;
+import java.io.InputStream;
+import java.security.*;
+import java.security.cert.CertificateException;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
 import static io.jsonwebtoken.Jwts.parser;
 
 @Service
